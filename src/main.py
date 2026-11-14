@@ -73,7 +73,8 @@ def main():
 
 
 while True:
-    main();
+    if __name__ == "__main__":
+        main();
     answer = input("Рассчитать другую смену? (да/нет): ").strip().lower();
     while answer != "да" and answer != "нет":
         answer = input("Введите «да» или «нет»: ").strip().lower();
