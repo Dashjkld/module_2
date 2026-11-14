@@ -48,28 +48,28 @@ def main():
     overtime_hours, overtime_payment, total_salary = calculate_salary(rate, shift_duration);
     category = get_shift_category(shift_duration);
 
-    print()
+    print();
     print(f"{'ОТЧЁТ О ЗАРАБОТКЕ':^60}");
     print("-" * 60);
     print(f"{'Имя работника:':<35}{name:>25}");
-    print(f"{'Продолжительность смены:':<35}{shift_duration:>25.2f} ч");
-    print(f"{'Почасовая ставка:':<35}{rate:>25.2f} тг/ч");
-    print(f"{'Сверхурочные часы:':<35}{overtime_hours:>25.2f} ч");
-    print(f"{'Оплата сверхурочной части:':<35}{overtime_payment:>25.2f} тг");
-    print(f"{'Общий заработок:':<35}{total_salary:>25.2f} тг");
+    print(f"{'Продолжительность смены:':<35}{f'{shift_duration:.2f} ч':>25}");
+    print(f"{'Почасовая ставка:':<35}{f'{rate:.2f} тг/ч':>25}");
+    print(f"{'Сверхурочные часы:':<35}{f'{overtime_hours:.2f} ч':>25}");
+    print(f"{'Оплата сверхурочной части:':<35}{f'{overtime_payment:.2f} тг':>25}");
+    print(f"{'Общий заработок:':<35}{f'{total_salary:.2f} тг':>25}");
     print(f"{'Категория смены:':<35}{category:>25}");
     print("-" * 60);
 
-    print()
+    print();
     print(f"{'ТАБЛИЦА ЗАРАБОТКА':^60}");
-    print("-" * 35);
-    print(f"{'Часы':<15}{'Заработок, тг':>20}");
-    print("-" * 35);
+    print("-" * 60);
+    print(f"{'Часы':<35}{'Заработок, тг':>25}");
+    print("-" * 60);
 
     for hours in range(6, 11):
         overtime_hours, overtime_payment, total_salary = calculate_salary(rate, hours);
-        print(f"{hours:02d}{'':13}{total_salary:>20.2f}");
-    print("-" * 35);
+        print(f"{hours:02d}{' ' * 33}{total_salary:>25.2f}");
+    print("-" * 60);
 
 
 while True:
